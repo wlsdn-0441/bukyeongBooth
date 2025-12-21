@@ -1,0 +1,108 @@
+.reaction-game {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.game-container {
+  background: white;
+  border-radius: 20px;
+  padding: 60px;
+  text-align: center;
+}
+
+.game-container h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #667eea;
+}
+
+.game-container p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.start-btn {
+  padding: 20px 60px;
+  font-size: 24px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background 0.3s;
+  font-weight: bold;
+}
+
+.start-btn:hover {
+  background: #cc0000;
+}
+
+.back-btn {
+  padding: 15px 40px;
+  font-size: 20px;
+  background: #ccc;
+  color: #333;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.back-btn:hover {
+  background: #bbb;
+}
+
+/* 게임 화면 (전체 화면) */
+.game-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  user-select: none;
+}
+
+/* 대기 화면 (회색) */
+.waiting-screen {
+  background: #808080;
+  color: white;
+}
+
+.waiting-screen h2 {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.waiting-screen p {
+  font-size: 24px;
+  opacity: 0.9;
+}
+
+/* 활성 화면 (빨간색) */
+.active-screen {
+  background: #ff0000;
+  color: white;
+}
+
+.active-screen h2 {
+  font-size: 72px;
+  font-weight: bold;
+  animation: pulse 0.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}

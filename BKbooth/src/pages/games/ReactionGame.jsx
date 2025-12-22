@@ -6,7 +6,7 @@ import './ReactionGame.css';
 
 function ReactionGame() {
   const navigate = useNavigate();
-  const [gameState, setGameState] = useState('ready'); // ready, waiting, active, complete, tooEarly
+  const [gameState, setGameState] = useState('ready'); // ready, waiting, active, processing, complete, tooEarly
   const [startTime, setStartTime] = useState(null);
   const [reactionTime, setReactionTime] = useState(null);
   const [score, setScore] = useState(null);
@@ -28,6 +28,11 @@ function ReactionGame() {
   };
 
   const handleScreenClick = () => {
+    // 이미 처리 중이면 무시 (중복 방지)
+    if (gameState === 'processing') {
+      return;
+    }
+
     // waiting 상태에서 클릭하면 너무 빨리 누른 것
     if (gameState === 'waiting') {
       clearTimeout(timeoutId);
@@ -37,6 +42,8 @@ function ReactionGame() {
 
     // active 상태에서만 반응
     if (gameState === 'active') {
+      setGameState('processing'); // 중복 클릭 방지
+
       const endTime = Date.now();
       const reaction = endTime - startTime;
 
@@ -46,12 +53,6 @@ function ReactionGame() {
       // 세션 생성 및 완료 처리
       createGameSessionAndComplete(reaction);
     }
-  };
-
-  const handleScreenTouch = (e) => {
-    // 터치 이벤트 후 클릭 이벤트가 중복 발생하는 것을 방지
-    e.preventDefault();
-    handleScreenClick();
   };
 
   const handleRetry = () => {
@@ -130,7 +131,7 @@ function ReactionGame() {
       <div
         className="game-screen waiting-screen"
         onClick={handleScreenClick}
-        onTouchStart={handleScreenTouch}
+        onTouchEnd={handleScreenClick}
       >
         <h2>대기하세요...</h2>
         <p>화면이 빨간색으로 변할 때까지 기다리세요</p>
@@ -138,13 +139,13 @@ function ReactionGame() {
     );
   }
 
-  // active 상태
-  if (gameState === 'active') {
+  // active 상태 또는 processing 상태
+  if (gameState === 'active' || gameState === 'processing') {
     return (
       <div
         className="game-screen active-screen"
         onClick={handleScreenClick}
-        onTouchStart={handleScreenTouch}
+        onTouchEnd={handleScreenClick}
       >
         <h2>지금 클릭!</h2>
       </div>

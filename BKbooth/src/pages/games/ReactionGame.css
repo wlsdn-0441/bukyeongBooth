@@ -106,3 +106,13 @@
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
 }
+
+/* 너무 빨리 누름 메시지 */
+.too-early h1 {
+  color: #ff6600;
+}
+
+.too-early p {
+  color: #ff6600;
+  font-weight: bold;
+}

@@ -2,7 +2,7 @@ import { QRCodeSVG } from 'qrcode.react';
 import './GameComplete.css';
 
 function GameComplete({ sessionId, score, gameType, onNext }) {
-  const qrValue = `https://bukyeongsite.vercel.app/claim?session=${sessionId}`;
+  const qrValue = `https://bukyeong.com/claim?session=${sessionId}`;
 
   const gameTypeNames = {
     reaction: '반응속도',

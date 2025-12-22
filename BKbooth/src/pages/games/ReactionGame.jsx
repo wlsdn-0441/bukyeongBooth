@@ -6,11 +6,12 @@ import './ReactionGame.css';
 
 function ReactionGame() {
   const navigate = useNavigate();
-  const [gameState, setGameState] = useState('ready'); // ready, waiting, active, complete
+  const [gameState, setGameState] = useState('ready'); // ready, waiting, active, complete, tooEarly
   const [startTime, setStartTime] = useState(null);
   const [reactionTime, setReactionTime] = useState(null);
   const [score, setScore] = useState(null);
   const [sessionId, setSessionId] = useState(null);
+  const [timeoutId, setTimeoutId] = useState(null);
 
   const handleStartGame = () => {
     setGameState('waiting');
@@ -18,15 +19,19 @@ function ReactionGame() {
     // 3~5초 랜덤 대기
     const randomDelay = Math.random() * 2000 + 3000; // 3000~5000ms
 
-    setTimeout(() => {
+    const id = setTimeout(() => {
       setStartTime(Date.now());
       setGameState('active');
     }, randomDelay);
+
+    setTimeoutId(id);
   };
 
   const handleScreenClick = () => {
-    // waiting 상태에서 클릭하면 무시
+    // waiting 상태에서 클릭하면 너무 빨리 누른 것
     if (gameState === 'waiting') {
+      clearTimeout(timeoutId);
+      setGameState('tooEarly');
       return;
     }
 
@@ -41,6 +46,20 @@ function ReactionGame() {
       // 세션 생성 및 완료 처리
       createGameSessionAndComplete(reaction);
     }
+  };
+
+  const handleScreenTouch = (e) => {
+    // 터치 이벤트 후 클릭 이벤트가 중복 발생하는 것을 방지
+    e.preventDefault();
+    handleScreenClick();
+  };
+
+  const handleRetry = () => {
+    setGameState('ready');
+    setStartTime(null);
+    setReactionTime(null);
+    setScore(null);
+    setTimeoutId(null);
   };
 
   const createGameSessionAndComplete = async (finalScore) => {
@@ -87,10 +106,32 @@ function ReactionGame() {
     );
   }
 
+  // tooEarly 상태
+  if (gameState === 'tooEarly') {
+    return (
+      <div className="reaction-game">
+        <div className="game-container too-early">
+          <h1>너무 빨리 눌렀습니다!</h1>
+          <p>빨간색 화면이 나타날 때까지 기다려야 합니다.</p>
+          <button className="start-btn" onClick={handleRetry}>
+            다시 시작
+          </button>
+          <button className="back-btn" onClick={() => navigate('/')}>
+            돌아가기
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   // waiting 상태
   if (gameState === 'waiting') {
     return (
-      <div className="game-screen waiting-screen" onClick={handleScreenClick}>
+      <div
+        className="game-screen waiting-screen"
+        onClick={handleScreenClick}
+        onTouchStart={handleScreenTouch}
+      >
         <h2>대기하세요...</h2>
         <p>화면이 빨간색으로 변할 때까지 기다리세요</p>
       </div>
@@ -100,7 +141,11 @@ function ReactionGame() {
   // active 상태
   if (gameState === 'active') {
     return (
-      <div className="game-screen active-screen" onClick={handleScreenClick}>
+      <div
+        className="game-screen active-screen"
+        onClick={handleScreenClick}
+        onTouchStart={handleScreenTouch}
+      >
         <h2>지금 클릭!</h2>
       </div>
     );

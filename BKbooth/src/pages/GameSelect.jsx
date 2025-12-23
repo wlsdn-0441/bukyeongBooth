@@ -14,7 +14,7 @@ function GameSelect() {
   return (
     <div className="game-select">
       <div className="select-container">
-        <h1 className="main-title">부경대 축제 미니게임</h1>
+        <h1 className="main-title">부경고등학교 미니게임</h1>
         <p className="subtitle">플레이할 게임을 선택하세요</p>
 
         <div className="game-grid">

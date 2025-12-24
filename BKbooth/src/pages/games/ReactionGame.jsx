@@ -95,7 +95,7 @@ function ReactionGame() {
       <div className="reaction-game">
         <div className="game-container">
           <h1>반응속도 테스트</h1>
-          <p>화면이 빨간색으로 변하면 빠르게 클릭하세요!</p>
+          <p>화면 색깔이 변하면 빠르게 클릭하세요!</p>
           <button className="start-btn" onClick={handleStartGame}>
             게임 시작
           </button>
@@ -113,7 +113,7 @@ function ReactionGame() {
       <div className="reaction-game">
         <div className="game-container too-early">
           <h1>너무 빨리 눌렀습니다!</h1>
-          <p>빨간색 화면이 나타날 때까지 기다려야 합니다.</p>
+          <p>색깔이 변경될 때까지 기다려야 합니다.</p>
           <button className="start-btn" onClick={handleRetry}>
             다시 시작
           </button>
@@ -134,7 +134,7 @@ function ReactionGame() {
         onTouchEnd={handleScreenClick}
       >
         <h2>대기하세요...</h2>
-        <p>화면이 빨간색으로 변할 때까지 기다리세요</p>
+        <p>화면 색깔이 변할 때까지 기다리세요</p>
       </div>
     );
   }

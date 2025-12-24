@@ -1,60 +1,368 @@
 .game-select {
-  min-height: 100vh;
+  width: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(135deg, #ffffff 0%, #764ba2 100%);
-  padding: 20px;
+  background: linear-gradient(135deg, #FAF7F2 0%, #F5EBE0 50%, #E3D5CA 100%);
+  padding: 2vh 2vw;
+  position: relative;
+  overflow: hidden;
+  animation: backgroundBreathe 6s ease-in-out infinite;
+}
+
+@keyframes backgroundBreathe {
+  0%, 100% {
+    background: linear-gradient(135deg, #FAF7F2 0%, #F5EBE0 50%, #E3D5CA 100%);
+  }
+  50% {
+    background: linear-gradient(135deg, #F5EBE0 0%, #E3D5CA 50%, #D5BDAF 100%);
+  }
+}
+
+/* 카페 느낌의 배경 패턴 */
+.game-select::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image:
+    radial-gradient(circle at 20% 50%, rgba(200, 159, 119, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(166, 124, 82, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  animation: patternFloat 8s ease-in-out infinite;
+}
+
+@keyframes patternFloat {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
 }
 
 .select-container {
-  max-width: 800px;
+  max-width: 900px;
   width: 100%;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .main-title {
-  font-size: 48px;
-  font-weight: bold;
-  color: white;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  background: linear-gradient(135deg, #5D4E37 0%, #8B7355 50%, #5D4E37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 100%;
   text-align: center;
-  margin-bottom: 10px;
+  margin-bottom: 1vh;
+  text-shadow: 2px 4px 8px rgba(93, 78, 55, 0.1);
+  letter-spacing: -1px;
+  animation:
+    titleSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards,
+    titleShine 3s ease-in-out infinite 1s;
+}
+
+@keyframes titleShine {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes titleSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .subtitle {
-  font-size: 20px;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(16px, 2vw, 22px);
+  color: #8B7355;
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 3vh;
+  font-weight: 500;
+  animation:
+    titleSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s backwards,
+    subtitlePulse 3s ease-in-out infinite 1.5s;
+}
+
+@keyframes subtitlePulse {
+  0%, 100% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
 }
 
 .game-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
+  gap: 2vw;
+  padding: 0;
+  max-height: 60vh;
+}
+
+@media (max-width: 768px) {
+  .game-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .main-title {
+    font-size: 40px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
 }
 
 .game-card {
-  background: white;
-  border: 4px solid;
-  border-radius: 20px;
-  padding: 40px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5EBE0 100%);
+  border: 3px solid #C89F77;
+  border-radius: 24px;
+  padding: 3vh 2vw;
   cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 8px 24px rgba(93, 78, 55, 0.08),
+    0 2px 8px rgba(93, 78, 55, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    border-color: #C89F77;
+  }
+  50% {
+    border-color: #B38B6D;
+  }
+}
+
+.game-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at center, rgba(200, 159, 119, 0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  animation: cardGlow 4s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: 24px;
+}
+
+@keyframes cardGlow {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.game-card:nth-child(1) {
+  animation:
+    cardFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s backwards,
+    borderPulse 4s ease-in-out infinite 0s;
+}
+.game-card:nth-child(1)::after {
+  animation-delay: 0s;
+}
+.game-card:nth-child(1) .game-icon {
+  animation-delay: 0s;
+}
+.game-card:nth-child(1) .game-name {
+  animation-delay: 0.2s;
+}
+
+.game-card:nth-child(2) {
+  animation:
+    cardFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s backwards,
+    borderPulse 4s ease-in-out infinite 1s;
+}
+.game-card:nth-child(2)::after {
+  animation-delay: 1s;
+}
+.game-card:nth-child(2) .game-icon {
+  animation-delay: 0.5s;
+}
+.game-card:nth-child(2) .game-name {
+  animation-delay: 0.7s;
+}
+
+.game-card:nth-child(3) {
+  animation:
+    cardFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s backwards,
+    borderPulse 4s ease-in-out infinite 2s;
+}
+.game-card:nth-child(3)::after {
+  animation-delay: 2s;
+}
+.game-card:nth-child(3) .game-icon {
+  animation-delay: 1s;
+}
+.game-card:nth-child(3) .game-name {
+  animation-delay: 1.2s;
+}
+
+.game-card:nth-child(4) {
+  animation:
+    cardFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.7s backwards,
+    borderPulse 4s ease-in-out infinite 3s;
+}
+.game-card:nth-child(4)::after {
+  animation-delay: 3s;
+}
+.game-card:nth-child(4) .game-icon {
+  animation-delay: 1.5s;
+}
+.game-card:nth-child(4) .game-name {
+  animation-delay: 1.7s;
+}
+
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 카드 호버 시 배경 효과 */
+.game-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(200, 159, 119, 0.1) 0%, rgba(166, 124, 82, 0.15) 100%);
+  opacity: 0;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 24px;
+}
+
+.game-card:hover::before {
+  opacity: 1;
 }
 
 .game-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow:
+    0 20px 48px rgba(93, 78, 55, 0.15),
+    0 8px 24px rgba(93, 78, 55, 0.1),
+    inset 0 0 0 3px rgba(166, 124, 82, 0.3);
+  border-color: #A67C52 !important;
+  animation-play-state: paused;
+}
+
+.game-card:active {
+  transform: translateY(-8px) scale(0.98);
+  transition-duration: 0.1s;
 }
 
 .game-icon {
-  font-size: 80px;
-  margin-bottom: 20px;
+  font-size: clamp(50px, 6vw, 90px);
+  margin-bottom: 1.5vh;
+  position: relative;
+  z-index: 1;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 4px 12px rgba(93, 78, 55, 0.1));
+  animation: iconFloat 3s ease-in-out infinite;
+}
+
+@keyframes iconFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-8px) rotate(-2deg);
+  }
+  75% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+.game-card:hover .game-icon {
+  transform: scale(1.15) rotate(5deg);
+  filter: drop-shadow(0 8px 20px rgba(93, 78, 55, 0.15));
+  animation: none;
 }
 
 .game-name {
-  font-size: 28px;
-  font-weight: bold;
-  color: #333;
+  font-size: clamp(20px, 2.5vw, 32px);
+  font-weight: 700;
+  color: #5D4E37;
+  position: relative;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  letter-spacing: -0.5px;
+  animation: namePulse 4s ease-in-out infinite;
+}
+
+@keyframes namePulse {
+  0%, 100% {
+    color: #5D4E37;
+  }
+  50% {
+    color: #8B7355;
+  }
+}
+
+.game-card:hover .game-name {
+  color: #A67C52;
+  transform: scale(1.05);
+  animation: none;
+}
+
+/* 부드러운 로딩 애니메이션 */
+@keyframes gentlePulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.02);
+  }
 }

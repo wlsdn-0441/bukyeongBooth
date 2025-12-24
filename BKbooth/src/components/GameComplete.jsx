@@ -32,11 +32,6 @@ function GameComplete({ sessionId, score, gameType, onNext }) {
             />
           </div>
 
-          <div className="session-code">
-            <p>세션 코드 (수동 입력용):</p>
-            <p className="code">{sessionId}</p>
-          </div>
-
           <p className="expire-notice">
             ⏰ 15분 내에 점수를 등록해주세요
           </p>

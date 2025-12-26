@@ -6,7 +6,7 @@ function GameSelect() {
 
   const games = [
     { id: 'reaction', name: '반응속도', icon: '⚡', color: '#667eea' },
-    { id: 'timing', name: '타이밍', icon: '⏱️', color: '#f56565' },
+    { id: 'colorfind', name: '색깔 찾기', icon: '🎨', color: '#f56565' },
     { id: 'quiz', name: '퀴즈', icon: '🧠', color: '#48bb78' },
     { id: 'balloon', name: '풍선터뜨리기', icon: '🎈', color: '#ed8936' }
   ];

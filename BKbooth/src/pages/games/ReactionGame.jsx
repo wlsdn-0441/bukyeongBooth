@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { createGameSession } from '../../utils/session';
 import GameComplete from '../../components/GameComplete';
@@ -7,25 +7,37 @@ import './ReactionGame.css';
 function ReactionGame() {
   const navigate = useNavigate();
   const [gameState, setGameState] = useState('ready'); // ready, waiting, active, processing, complete, tooEarly
-  const [startTime, setStartTime] = useState(null);
   const [reactionTime, setReactionTime] = useState(null);
   const [score, setScore] = useState(null);
   const [sessionId, setSessionId] = useState(null);
   const [timeoutId, setTimeoutId] = useState(null);
+  const startTimeRef = useRef(null);
 
   const handleStartGame = () => {
     setGameState('waiting');
+    startTimeRef.current = null;
 
     // 3~5초 랜덤 대기
     const randomDelay = Math.random() * 2000 + 3000; // 3000~5000ms
 
     const id = setTimeout(() => {
-      setStartTime(Date.now());
       setGameState('active');
     }, randomDelay);
 
     setTimeoutId(id);
   };
+
+  // 화면이 실제로 'active' 상태로 렌더링되는 정확한 시점을 측정
+  useEffect(() => {
+    if (gameState === 'active') {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          // 2번의 requestAnimationFrame으로 확실히 렌더링 완료 후 시간 기록
+          startTimeRef.current = performance.now();
+        });
+      });
+    }
+  }, [gameState]);
 
   const handleScreenClick = () => {
     // 이미 처리 중이면 무시 (중복 방지)
@@ -41,11 +53,12 @@ function ReactionGame() {
     }
 
     // active 상태에서만 반응
-    if (gameState === 'active') {
+    if (gameState === 'active' && startTimeRef.current !== null) {
       setGameState('processing'); // 중복 클릭 방지
 
-      const endTime = Date.now();
-      const reaction = endTime - startTime;
+      // 클릭 이벤트가 발생한 정확한 시점 측정
+      const endTime = performance.now();
+      const reaction = Math.round(endTime - startTimeRef.current);
 
       setReactionTime(reaction);
       setScore(reaction); // 반응 시간을 그대로 점수로 저장 (ms)
@@ -57,10 +70,10 @@ function ReactionGame() {
 
   const handleRetry = () => {
     setGameState('ready');
-    setStartTime(null);
     setReactionTime(null);
     setScore(null);
     setTimeoutId(null);
+    startTimeRef.current = null;
   };
 
   const createGameSessionAndComplete = async (finalScore) => {

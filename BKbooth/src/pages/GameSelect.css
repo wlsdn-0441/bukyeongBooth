@@ -8,7 +8,7 @@
   padding: 2vh 2vw;
   position: relative;
   overflow: hidden;
-  animation: backgroundBreathe 6s ease-in-out infinite;
+  animation: backgroundBreathe 3s ease-in-out infinite;
 }
 
 @keyframes backgroundBreathe {
@@ -30,7 +30,7 @@
     radial-gradient(circle at 20% 50%, rgba(200, 159, 119, 0.08) 0%, transparent 50%),
     radial-gradient(circle at 80% 80%, rgba(166, 124, 82, 0.08) 0%, transparent 50%);
   pointer-events: none;
-  animation: patternFloat 8s ease-in-out infinite;
+  animation: patternFloat 4s ease-in-out infinite;
 }
 
 @keyframes patternFloat {
@@ -49,7 +49,7 @@
   width: 100%;
   position: relative;
   z-index: 1;
-  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: fadeInUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes fadeInUp {
@@ -76,8 +76,8 @@
   text-shadow: 2px 4px 8px rgba(93, 78, 55, 0.1);
   letter-spacing: -1px;
   animation:
-    titleSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards,
-    titleShine 3s ease-in-out infinite 1s;
+    titleSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s backwards,
+    titleShine 1.5s ease-in-out infinite 0.5s;
 }
 
 @keyframes titleShine {
@@ -107,8 +107,8 @@
   margin-bottom: 3vh;
   font-weight: 500;
   animation:
-    titleSlide 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.3s backwards,
-    subtitlePulse 3s ease-in-out infinite 1.5s;
+    titleSlide 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.15s backwards,
+    subtitlePulse 1.5s ease-in-out infinite 0.7s;
 }
 
 @keyframes subtitlePulse {
@@ -151,7 +151,7 @@
   border-radius: 24px;
   padding: 3vh 2vw;
   cursor: pointer;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -182,8 +182,8 @@
   bottom: 0;
   background: radial-gradient(circle at center, rgba(200, 159, 119, 0.1) 0%, transparent 70%);
   opacity: 0;
-  transition: opacity 0.5s ease;
-  animation: cardGlow 4s ease-in-out infinite;
+  transition: opacity 0.25s ease;
+  animation: cardGlow 2s ease-in-out infinite;
   pointer-events: none;
   border-radius: 24px;
 }
@@ -199,8 +199,8 @@
 
 .game-card:nth-child(1) {
   animation:
-    cardFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.4s backwards,
-    borderPulse 4s ease-in-out infinite 0s;
+    cardFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards,
+    borderPulse 2s ease-in-out infinite 0s;
 }
 .game-card:nth-child(1)::after {
   animation-delay: 0s;
@@ -214,47 +214,47 @@
 
 .game-card:nth-child(2) {
   animation:
-    cardFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.5s backwards,
-    borderPulse 4s ease-in-out infinite 1s;
+    cardFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.25s backwards,
+    borderPulse 2s ease-in-out infinite 0.5s;
 }
 .game-card:nth-child(2)::after {
   animation-delay: 1s;
 }
 .game-card:nth-child(2) .game-icon {
-  animation-delay: 0.5s;
+  animation-delay: 0.25s;
 }
 .game-card:nth-child(2) .game-name {
-  animation-delay: 0.7s;
+  animation-delay: 0.35s;
 }
 
 .game-card:nth-child(3) {
   animation:
-    cardFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.6s backwards,
-    borderPulse 4s ease-in-out infinite 2s;
+    cardFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.3s backwards,
+    borderPulse 2s ease-in-out infinite 1s;
 }
 .game-card:nth-child(3)::after {
   animation-delay: 2s;
 }
 .game-card:nth-child(3) .game-icon {
-  animation-delay: 1s;
+  animation-delay: 0.5s;
 }
 .game-card:nth-child(3) .game-name {
-  animation-delay: 1.2s;
+  animation-delay: 0.6s;
 }
 
 .game-card:nth-child(4) {
   animation:
-    cardFadeIn 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.7s backwards,
-    borderPulse 4s ease-in-out infinite 3s;
+    cardFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1) 0.35s backwards,
+    borderPulse 2s ease-in-out infinite 1.5s;
 }
 .game-card:nth-child(4)::after {
   animation-delay: 3s;
 }
 .game-card:nth-child(4) .game-icon {
-  animation-delay: 1.5s;
+  animation-delay: 0.75s;
 }
 .game-card:nth-child(4) .game-name {
-  animation-delay: 1.7s;
+  animation-delay: 0.85s;
 }
 
 @keyframes cardFadeIn {
@@ -278,7 +278,7 @@
   bottom: 0;
   background: linear-gradient(135deg, rgba(200, 159, 119, 0.1) 0%, rgba(166, 124, 82, 0.15) 100%);
   opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 24px;
 }
 
@@ -288,6 +288,7 @@
 
 .game-card:hover {
   transform: translateY(-12px) scale(1.02);
+  background: linear-gradient(135deg, #F5EBE0 0%, #E3D5CA 100%);
   box-shadow:
     0 20px 48px rgba(93, 78, 55, 0.15),
     0 8px 24px rgba(93, 78, 55, 0.1),
@@ -306,9 +307,9 @@
   margin-bottom: 1.5vh;
   position: relative;
   z-index: 1;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   filter: drop-shadow(0 4px 12px rgba(93, 78, 55, 0.1));
-  animation: iconFloat 3s ease-in-out infinite;
+  animation: iconFloat 1.5s ease-in-out infinite;
 }
 
 @keyframes iconFloat {
@@ -335,9 +336,9 @@
   color: #5D4E37;
   position: relative;
   z-index: 1;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   letter-spacing: -0.5px;
-  animation: namePulse 4s ease-in-out infinite;
+  animation: namePulse 2s ease-in-out infinite;
 }
 
 @keyframes namePulse {

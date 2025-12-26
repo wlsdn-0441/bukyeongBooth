@@ -1,15 +1,27 @@
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { QRCodeSVG } from 'qrcode.react';
 import './GameComplete.css';
 
 function GameComplete({ sessionId, score, gameType, onNext }) {
+  const navigate = useNavigate();
   const qrValue = `https://bukyeong.com/claim?session=${sessionId}`;
 
   const gameTypeNames = {
     reaction: '반응속도',
-    timing: '타이밍',
+    colorfind: '색깔 찾기',
     quiz: '퀴즈',
     balloon: '풍선터뜨리기'
   };
+
+  // 5분 후 자동으로 메인 페이지로 이동
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      navigate('/');
+    }, 300000); // 5분 = 300,000ms
+
+    return () => clearTimeout(timer);
+  }, [navigate]);
 
   return (
     <div className="game-complete">
@@ -18,7 +30,7 @@ function GameComplete({ sessionId, score, gameType, onNext }) {
 
         <div className="score-display">
           <p className="game-type">{gameTypeNames[gameType]}</p>
-          <p className="score">{score}ms</p>
+          <p className="score">{score}{gameType === 'reaction' ? 'ms' : '점'}</p>
         </div>
 
         <div className="qr-section">

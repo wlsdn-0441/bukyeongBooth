@@ -1,0 +1,26 @@
+{
+  "name": "부경고등학교 게임 부스",
+  "short_name": "부경 부스",
+  "description": "부경고등학교 미니게임 부스 - 반응속도, 색깔 찾기, 기억력, 풍선 터뜨리기",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#C89F77",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "entertainment"],
+  "screenshots": []
+}

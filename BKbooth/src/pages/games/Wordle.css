@@ -217,7 +217,7 @@
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: minmax(250px, 1fr) minmax(400px, 1.5fr) minmax(300px, 1.2fr);
+  grid-template-columns: minmax(250px, 1fr) minmax(200px, 1.2fr) minmax(400px, 1.5fr);
   gap: 0;
   background: linear-gradient(135deg, #FAF7F2 0%, #F5EBE0 100%);
   overflow: hidden;
@@ -514,8 +514,8 @@
 
   /* --- 아래 속성들을 추가하거나 수정하세요 --- */
 
-  flex: 0 0 400px;       /* 1. 고정 너비 지정 (최소 300px 확보) */
-  min-width: 36vw;      /* 2. 화면 너비의 최소 20%는 유지 */
+  flex: 0 0 300px;       /* 1. 고정 너비 지정 (최소 300px 확보) */
+  min-width: 30vw;      /* 2. 화면 너비의 최소 20%는 유지 */
  /* 3. 너무 커지지 않게 최대치 제한 (선택 사항) */
 }
 

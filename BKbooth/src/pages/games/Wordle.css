@@ -737,6 +737,7 @@
 
   .game-center {
     padding: 1vh 2vw;
+    max-width: 400px;
   }
 
   .game-keyboard {

@@ -5,6 +5,7 @@ import GameComplete from '../../components/GameComplete';
 import './CapitalQuiz.css';
 
 const TIME_PER_QUESTION = 15; // 각 문제당 15초
+const MAX_QUESTIONS = 20; // 최대 문제 개수
 
 function CapitalQuiz() {
   const navigate = useNavigate();

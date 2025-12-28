@@ -8,7 +8,7 @@ function GameSelect() {
     { id: 'reaction', name: '반응속도', icon: '⚡', color: '#667eea' },
     { id: 'colorfind', name: '색깔 찾기', icon: '🎨', color: '#f56565' },
     { id: 'wordle', name: '워들', icon: '🔤', color: '#48bb78' },
-    { id: 'balloon', name: '풍선터뜨리기', icon: '🎈', color: '#ed8936' }
+    { id: 'capital', name: '수도 퀴즈', icon: '🌍', color: '#A68966' }
   ];
 
   return (

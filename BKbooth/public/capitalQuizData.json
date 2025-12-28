@@ -1,0 +1,347 @@
+[
+  {
+    "country": "대한민국",
+    "capital": "서울",
+    "wrongAnswers": ["도쿄", "베이징", "방콕"]
+  },
+  {
+    "country": "일본",
+    "capital": "도쿄",
+    "wrongAnswers": ["서울", "베이징", "뉴델리"]
+  },
+  {
+    "country": "중국",
+    "capital": "베이징",
+    "wrongAnswers": ["서울", "도쿄", "모스크바"]
+  },
+  {
+    "country": "미국",
+    "capital": "워싱턴 D.C.",
+    "wrongAnswers": ["오타와", "런던", "파리"]
+  },
+  {
+    "country": "영국",
+    "capital": "런던",
+    "wrongAnswers": ["파리", "베를린", "로마"]
+  },
+  {
+    "country": "프랑스",
+    "capital": "파리",
+    "wrongAnswers": ["런던", "베를린", "마드리드"]
+  },
+  {
+    "country": "독일",
+    "capital": "베를린",
+    "wrongAnswers": ["파리", "런던", "로마"]
+  },
+  {
+    "country": "이탈리아",
+    "capital": "로마",
+    "wrongAnswers": ["파리", "베를린", "마드리드"]
+  },
+  {
+    "country": "스페인",
+    "capital": "마드리드",
+    "wrongAnswers": ["파리", "로마", "리스본"]
+  },
+  {
+    "country": "캐나다",
+    "capital": "오타와",
+    "wrongAnswers": ["워싱턴 D.C.", "런던", "캔버라"]
+  },
+  {
+    "country": "호주",
+    "capital": "캔버라",
+    "wrongAnswers": ["웰링턴", "오타와", "런던"]
+  },
+  {
+    "country": "브라질",
+    "capital": "브라질리아",
+    "wrongAnswers": ["부에노스아이레스", "산티아고", "리마"]
+  },
+  {
+    "country": "인도",
+    "capital": "뉴델리",
+    "wrongAnswers": ["베이징", "방콕", "자카르타"]
+  },
+  {
+    "country": "러시아",
+    "capital": "모스크바",
+    "wrongAnswers": ["베이징", "베를린", "바르샤바"]
+  },
+  {
+    "country": "태국",
+    "capital": "방콕",
+    "wrongAnswers": ["하노이", "자카르타", "마닐라"]
+  },
+  {
+    "country": "베트남",
+    "capital": "하노이",
+    "wrongAnswers": ["방콕", "자카르타", "쿠알라룸푸르"]
+  },
+  {
+    "country": "인도네시아",
+    "capital": "자카르타",
+    "wrongAnswers": ["방콕", "하노이", "싱가포르"]
+  },
+  {
+    "country": "아르헨티나",
+    "capital": "부에노스아이레스",
+    "wrongAnswers": ["브라질리아", "산티아고", "리마"]
+  },
+  {
+    "country": "이집트",
+    "capital": "카이로",
+    "wrongAnswers": ["리야드", "테헤란", "앙카라"]
+  },
+  {
+    "country": "멕시코",
+    "capital": "멕시코시티",
+    "wrongAnswers": ["워싱턴 D.C.", "오타와", "하바나"]
+  },
+  {
+    "country": "네덜란드",
+    "capital": "암스테르담",
+    "wrongAnswers": ["브뤼셀", "룩셈부르크", "베른"]
+  },
+  {
+    "country": "벨기에",
+    "capital": "브뤼셀",
+    "wrongAnswers": ["암스테르담", "파리", "룩셈부르크"]
+  },
+  {
+    "country": "스위스",
+    "capital": "베른",
+    "wrongAnswers": ["빈", "베를린", "암스테르담"]
+  },
+  {
+    "country": "오스트리아",
+    "capital": "빈",
+    "wrongAnswers": ["베를린", "베른", "프라하"]
+  },
+  {
+    "country": "폴란드",
+    "capital": "바르샤바",
+    "wrongAnswers": ["베를린", "프라하", "부다페스트"]
+  },
+  {
+    "country": "체코",
+    "capital": "프라하",
+    "wrongAnswers": ["빈", "바르샤바", "부다페스트"]
+  },
+  {
+    "country": "헝가리",
+    "capital": "부다페스트",
+    "wrongAnswers": ["프라하", "빈", "바르샤바"]
+  },
+  {
+    "country": "그리스",
+    "capital": "아테네",
+    "wrongAnswers": ["로마", "앙카라", "소피아"]
+  },
+  {
+    "country": "터키",
+    "capital": "앙카라",
+    "wrongAnswers": ["아테네", "테헤란", "카이로"]
+  },
+  {
+    "country": "사우디아라비아",
+    "capital": "리야드",
+    "wrongAnswers": ["카이로", "테헤란", "앙카라"]
+  },
+  {
+    "country": "이란",
+    "capital": "테헤란",
+    "wrongAnswers": ["리야드", "앙카라", "바그다드"]
+  },
+  {
+    "country": "이라크",
+    "capital": "바그다드",
+    "wrongAnswers": ["테헤란", "리야드", "다마스쿠스"]
+  },
+  {
+    "country": "말레이시아",
+    "capital": "쿠알라룸푸르",
+    "wrongAnswers": ["방콕", "자카르타", "싱가포르"]
+  },
+  {
+    "country": "싱가포르",
+    "capital": "싱가포르",
+    "wrongAnswers": ["쿠알라룸푸르", "자카르타", "방콕"]
+  },
+  {
+    "country": "필리핀",
+    "capital": "마닐라",
+    "wrongAnswers": ["방콕", "자카르타", "하노이"]
+  },
+  {
+    "country": "파키스탄",
+    "capital": "이슬라마바드",
+    "wrongAnswers": ["뉴델리", "카불", "다카"]
+  },
+  {
+    "country": "방글라데시",
+    "capital": "다카",
+    "wrongAnswers": ["뉴델리", "이슬라마바드", "카트만두"]
+  },
+  {
+    "country": "네팔",
+    "capital": "카트만두",
+    "wrongAnswers": ["뉴델리", "다카", "이슬라마바드"]
+  },
+  {
+    "country": "스리랑카",
+    "capital": "콜롬보",
+    "wrongAnswers": ["뉴델리", "다카", "카트만두"]
+  },
+  {
+    "country": "미얀마",
+    "capital": "네피도",
+    "wrongAnswers": ["방콕", "하노이", "다카"]
+  },
+  {
+    "country": "뉴질랜드",
+    "capital": "웰링턴",
+    "wrongAnswers": ["캔버라", "수바", "포트모르즈비"]
+  },
+  {
+    "country": "칠레",
+    "capital": "산티아고",
+    "wrongAnswers": ["부에노스아이레스", "브라질리아", "리마"]
+  },
+  {
+    "country": "페루",
+    "capital": "리마",
+    "wrongAnswers": ["산티아고", "브라질리아", "부에노스아이레스"]
+  },
+  {
+    "country": "콜롬비아",
+    "capital": "보고타",
+    "wrongAnswers": ["리마", "카라카스", "키토"]
+  },
+  {
+    "country": "베네수엘라",
+    "capital": "카라카스",
+    "wrongAnswers": ["보고타", "브라질리아", "조지타운"]
+  },
+  {
+    "country": "에콰도르",
+    "capital": "키토",
+    "wrongAnswers": ["보고타", "리마", "라파스"]
+  },
+  {
+    "country": "볼리비아",
+    "capital": "라파스",
+    "wrongAnswers": ["리마", "키토", "산티아고"]
+  },
+  {
+    "country": "우루과이",
+    "capital": "몬테비데오",
+    "wrongAnswers": ["부에노스아이레스", "브라질리아", "아순시온"]
+  },
+  {
+    "country": "파라과이",
+    "capital": "아순시온",
+    "wrongAnswers": ["몬테비데오", "부에노스아이레스", "브라질리아"]
+  },
+  {
+    "country": "노르웨이",
+    "capital": "오슬로",
+    "wrongAnswers": ["스톡홀름", "코펜하겐", "헬싱키"]
+  },
+  {
+    "country": "스웨덴",
+    "capital": "스톡홀름",
+    "wrongAnswers": ["오슬로", "코펜하겐", "헬싱키"]
+  },
+  {
+    "country": "덴마크",
+    "capital": "코펜하겐",
+    "wrongAnswers": ["스톡홀름", "오슬로", "헬싱키"]
+  },
+  {
+    "country": "핀란드",
+    "capital": "헬싱키",
+    "wrongAnswers": ["스톡홀름", "오슬로", "코펜하겐"]
+  },
+  {
+    "country": "아이슬란드",
+    "capital": "레이캬비크",
+    "wrongAnswers": ["오슬로", "코펜하겐", "더블린"]
+  },
+  {
+    "country": "아일랜드",
+    "capital": "더블린",
+    "wrongAnswers": ["런던", "에든버러", "레이캬비크"]
+  },
+  {
+    "country": "포르투갈",
+    "capital": "리스본",
+    "wrongAnswers": ["마드리드", "파리", "로마"]
+  },
+  {
+    "country": "루마니아",
+    "capital": "부쿠레슈티",
+    "wrongAnswers": ["부다페스트", "소피아", "베오그라드"]
+  },
+  {
+    "country": "불가리아",
+    "capital": "소피아",
+    "wrongAnswers": ["부쿠레슈티", "아테네", "베오그라드"]
+  },
+  {
+    "country": "세르비아",
+    "capital": "베오그라드",
+    "wrongAnswers": ["부다페스트", "부쿠레슈티", "소피아"]
+  },
+  {
+    "country": "우크라이나",
+    "capital": "키이우",
+    "wrongAnswers": ["바르샤바", "모스크바", "부쿠레슈티"]
+  },
+  {
+    "country": "남아프리카공화국",
+    "capital": "프리토리아",
+    "wrongAnswers": ["카이로", "나이로비", "아디스아바바"]
+  },
+  {
+    "country": "케냐",
+    "capital": "나이로비",
+    "wrongAnswers": ["카이로", "프리토리아", "아디스아바바"]
+  },
+  {
+    "country": "에티오피아",
+    "capital": "아디스아바바",
+    "wrongAnswers": ["나이로비", "카이로", "하르툼"]
+  },
+  {
+    "country": "나이지리아",
+    "capital": "아부자",
+    "wrongAnswers": ["아크라", "다카르", "나이로비"]
+  },
+  {
+    "country": "가나",
+    "capital": "아크라",
+    "wrongAnswers": ["아부자", "다카르", "몬로비아"]
+  },
+  {
+    "country": "모로코",
+    "capital": "라바트",
+    "wrongAnswers": ["카이로", "알제", "튀니스"]
+  },
+  {
+    "country": "알제리",
+    "capital": "알제",
+    "wrongAnswers": ["라바트", "튀니스", "트리폴리"]
+  },
+  {
+    "country": "쿠바",
+    "capital": "아바나",
+    "wrongAnswers": ["멕시코시티", "산토도밍고", "킹스턴"]
+  },
+  {
+    "country": "자메이카",
+    "capital": "킹스턴",
+    "wrongAnswers": ["아바나", "산토도밍고", "포르토프랭스"]
+  }
+]

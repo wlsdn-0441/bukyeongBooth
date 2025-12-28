@@ -219,6 +219,9 @@ function ColorFindGame() {
             <span className="info-label">문제</span>
             <span className="info-value">{questionsInLevel + 1}/3</span>
           </div>
+          <button className="exit-game-btn" onClick={() => navigate('/')}>
+            나가기
+          </button>
         </div>
 
         {/* 타이머 프로그레스 바 */}
@@ -228,21 +231,17 @@ function ColorFindGame() {
         </div>
 
         {/* 타일 그리드 */}
-        <div
-          className={`tiles-grid grid-${config.grid}`}
-          style={{
-            gridTemplateColumns: `repeat(${config.grid}, 1fr)`,
-            gridTemplateRows: `repeat(${config.grid}, 1fr)`
-          }}
-        >
-          {tiles.map((color, index) => (
-            <div
-              key={index}
-              className={`tile ${clickedIndex === index ? (isCorrect ? 'correct' : 'wrong') : ''}`}
-              style={{ backgroundColor: color }}
-              onClick={() => handleTileClick(index)}
-            />
-          ))}
+        <div className="tiles-grid-wrapper">
+          <div className={`tiles-grid grid-${config.grid}`}>
+            {tiles.map((color, index) => (
+              <div
+                key={index}
+                className={`tile ${clickedIndex === index ? (isCorrect ? 'correct' : 'wrong') : ''}`}
+                style={{ backgroundColor: color }}
+                onClick={() => handleTileClick(index)}
+              />
+            ))}
+          </div>
         </div>
 
         {/* 하단 정보 */}

@@ -146,6 +146,15 @@ function ReactionGame() {
         onClick={handleScreenClick}
         onTouchEnd={handleScreenClick}
       >
+        <button
+          className="exit-game-btn-absolute"
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate('/');
+          }}
+        >
+          나가기
+        </button>
         <h2>대기하세요...</h2>
         <p>화면 색깔이 변할 때까지 기다리세요</p>
       </div>
@@ -160,6 +169,15 @@ function ReactionGame() {
         onClick={handleScreenClick}
         onTouchEnd={handleScreenClick}
       >
+        <button
+          className="exit-game-btn-absolute"
+          onClick={(e) => {
+            e.stopPropagation();
+            navigate('/');
+          }}
+        >
+          나가기
+        </button>
         <h2>지금 클릭!</h2>
       </div>
     );

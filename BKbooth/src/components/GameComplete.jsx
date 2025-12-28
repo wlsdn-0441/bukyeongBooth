@@ -10,7 +10,7 @@ function GameComplete({ sessionId, score, gameType, onNext }) {
   const gameTypeNames = {
     reaction: '반응속도',
     colorfind: '색깔 찾기',
-    quiz: '퀴즈',
+    wordle: '워들',
     balloon: '풍선터뜨리기'
   };
 

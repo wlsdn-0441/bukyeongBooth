@@ -188,6 +188,34 @@
   letter-spacing: 2px;
 }
 
+/* 나가기 버튼 (게임 화면용 - 절대 위치) */
+.exit-game-btn-absolute {
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  padding: 1vh 2vw;
+  font-size: clamp(14px, 1.6vw, 18px);
+  background: linear-gradient(135deg, #E3D5CA 0%, #D5BDAF 100%);
+  color: #5D4E37;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(93, 78, 55, 0.08);
+  z-index: 10;
+}
+
+.exit-game-btn-absolute:hover {
+  background: linear-gradient(135deg, #D5BDAF 0%, #C89F77 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(93, 78, 55, 0.12);
+}
+
+.exit-game-btn-absolute:active {
+  transform: translateY(0);
+}
+
 /* 너무 빨리 누름 메시지 */
 .too-early {
   position: relative;

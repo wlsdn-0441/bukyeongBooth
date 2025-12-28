@@ -210,35 +210,30 @@
 /* ===== 게임 플레이 화면 - 3단 레이아웃 ===== */
 .wordle-game.playing {
   padding: 0;
-  overflow: hidden;
 }
 
 .game-layout {
   width: 100vw;
   height: 100vh;
   display: grid;
-  grid-template-columns: minmax(250px, 1fr) minmax(200px, 1.2fr) minmax(400px, 1.5fr);
+  grid-template-columns: 1fr 1.5fr 1.2fr;
   gap: 0;
   background: linear-gradient(135deg, #FAF7F2 0%, #F5EBE0 100%);
-  overflow: hidden;
 }
 
 /* 왼쪽 - 게임 설명 */
 .game-guide {
   background: linear-gradient(135deg, #FFFFFF 0%, #F5EBE0 100%);
-  padding: 3vh 2vw;
+  padding: 4vh 3vw;
   overflow-y: auto;
-  overflow-x: hidden;
   display: flex;
   flex-direction: column;
-  gap: 1.5vh;
+  gap: 2vh;
   box-shadow: 2px 0 10px rgba(93, 78, 55, 0.05);
-  height: 100vh;
-  box-sizing: border-box;
 }
 
 .game-guide h2 {
-  font-size: clamp(20px, 2.2vw, 28px);
+  font-size: clamp(22px, 2.5vw, 32px);
   color: #5D4E37;
   margin: 0;
   font-weight: 800;
@@ -246,35 +241,35 @@
 }
 
 .guide-desc {
-  font-size: clamp(13px, 1.5vw, 16px);
+  font-size: clamp(14px, 1.6vw, 18px);
   color: #8B7355;
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
 }
 
 .color-examples {
   display: flex;
   flex-direction: column;
-  gap: 1.5vh;
-  padding: 1.5vh 0;
+  gap: 2vh;
+  padding: 2vh 0;
 }
 
 .color-example {
   display: flex;
   align-items: center;
-  gap: 1.2vw;
+  gap: 1.5vw;
 }
 
 .example-tile {
-  width: clamp(42px, 4.5vw, 55px);
-  height: clamp(42px, 4.5vw, 55px);
+  width: clamp(45px, 5vw, 60px);
+  height: clamp(45px, 5vw, 60px);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(18px, 2.2vw, 24px);
+  font-size: clamp(20px, 2.5vw, 28px);
   font-weight: 900;
   color: white;
-  border-radius: 6px;
+  border-radius: 8px;
   flex-shrink: 0;
 }
 
@@ -293,47 +288,47 @@
 .example-text {
   display: flex;
   flex-direction: column;
-  gap: 0.2vh;
+  gap: 0.3vh;
 }
 
 .example-text strong {
-  font-size: clamp(14px, 1.6vw, 18px);
+  font-size: clamp(16px, 1.8vw, 20px);
   color: #5D4E37;
   font-weight: 700;
 }
 
 .example-text span {
-  font-size: clamp(12px, 1.3vw, 14px);
+  font-size: clamp(13px, 1.4vw, 16px);
   color: #8B7355;
-  line-height: 1.3;
+  line-height: 1.4;
 }
 
 .game-tips {
   background: rgba(200, 159, 119, 0.1);
-  padding: 1.5vh 1.2vw;
-  border-radius: 14px;
-  margin-top: 0.5vh;
+  padding: 2vh 1.5vw;
+  border-radius: 16px;
+  margin-top: 1vh;
 }
 
 .game-tips h3 {
-  font-size: clamp(15px, 1.6vw, 18px);
+  font-size: clamp(16px, 1.8vw, 20px);
   color: #5D4E37;
-  margin: 0 0 0.8vh 0;
+  margin: 0 0 1vh 0;
   font-weight: 700;
 }
 
 .game-tips ul {
   margin: 0;
-  padding-left: 1.3em;
+  padding-left: 1.5em;
   list-style: none;
 }
 
 .game-tips li {
-  font-size: clamp(12px, 1.3vw, 14px);
+  font-size: clamp(13px, 1.4vw, 16px);
   color: #8B7355;
-  line-height: 1.6;
+  line-height: 1.8;
   position: relative;
-  margin-bottom: 0.6vh;
+  margin-bottom: 0.8vh;
 }
 
 .game-tips li::before {
@@ -350,95 +345,58 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5vh;
-  padding: 2vh 1.5vw;
-  height: 100vh;
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.wordle-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5vw;
-  flex-shrink: 0;
+  gap: 2vh;
+  padding: 2vh 2vw;
 }
 
 .game-center .timer-display {
-  font-size: clamp(16px, 1.8vw, 20px);
+  font-size: clamp(18px, 2vw, 24px);
+  font-family: 'Courier New', monospace;
   color: #5D4E37;
   background: linear-gradient(135deg, #FFFFFF 0%, #F5EBE0 100%);
-  padding: 0.8vh 2vw;
-  border-radius: 12px;
+  padding: 1vh 3vw;
+  border-radius: 16px;
   font-weight: 700;
   box-shadow:
     0 4px 12px rgba(93, 78, 55, 0.1),
     0 2px 6px rgba(93, 78, 55, 0.05);
-  letter-spacing: 0.5px;
-  white-space: nowrap;
-}
-
-.game-center .exit-game-btn {
-  padding: 0.8vh 1.5vw;
-  font-size: clamp(13px, 1.4vw, 16px);
-  background: linear-gradient(135deg, #E3D5CA 0%, #D5BDAF 100%);
-  color: #5D4E37;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  font-weight: 600;
-  box-shadow: 0 4px 12px rgba(93, 78, 55, 0.08);
-  white-space: nowrap;
-}
-
-.game-center .exit-game-btn:hover {
-  background: linear-gradient(135deg, #D5BDAF 0%, #C89F77 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(93, 78, 55, 0.12);
-}
-
-.game-center .exit-game-btn:active {
-  transform: translateY(0);
+  letter-spacing: 2px;
 }
 
 .game-center h1 {
-  font-size: clamp(28px, 3.5vw, 42px);
+  font-size: clamp(32px, 4.5vw, 52px);
   margin: 0;
   color: #5D4E37;
   font-weight: 900;
-  letter-spacing: 4px;
-  flex-shrink: 0;
+  letter-spacing: 6px;
 }
 
 .board {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding: 1.5vh 1vw;
+  gap: 8px;
+  padding: 2vh 1vw;
   background: linear-gradient(135deg, #FFFFFF 0%, #F5EBE0 100%);
-  border-radius: 16px;
+  border-radius: 20px;
   box-shadow:
     0 8px 24px rgba(93, 78, 55, 0.1),
     0 2px 8px rgba(93, 78, 55, 0.05);
-  flex-shrink: 0;
 }
 
 .row {
   display: flex;
-  gap: 6px;
+  gap: 8px;
   justify-content: center;
 }
 
 .tile {
-  width: clamp(45px, 5.5vw, 58px);
-  height: clamp(45px, 5.5vw, 58px);
+  width: clamp(48px, 7vw, 62px);
+  height: clamp(48px, 7vw, 62px);
   border: 2px solid #d3d6da;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(22px, 3.5vw, 28px);
+  font-size: clamp(24px, 4vw, 32px);
   font-weight: bold;
   text-transform: uppercase;
   background: white;
@@ -487,14 +445,13 @@
 }
 
 .message {
-  min-height: 40px;
-  font-size: clamp(15px, 1.8vw, 18px);
+  min-height: 50px;
+  font-size: clamp(16px, 2vw, 20px);
   font-weight: bold;
   color: #5D4E37;
   text-align: center;
   line-height: 1.4;
-  padding: 0.8vh 1.5vw;
-  flex-shrink: 0;
+  padding: 1vh 2vw;
 }
 
 /* 오른쪽 - 키보드 */
@@ -503,45 +460,36 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2.5vh 1.5vw;
+  padding: 3vh 2vw;
   background: linear-gradient(135deg, #F5EBE0 0%, #E3D5CA 100%);
   box-shadow: -2px 0 10px rgba(93, 78, 55, 0.05);
-  gap: 1.5vh;
-  height: 100vh;
-  box-sizing: border-box;
-  overflow-y: auto;
-  overflow-x: hidden;
-
-  /* --- 아래 속성들을 추가하거나 수정하세요 --- */
-
-  flex: 0 0 300px;       /* 1. 고정 너비 지정 (최소 300px 확보) */
-  min-width: 30vw;      /* 2. 화면 너비의 최소 20%는 유지 */
- /* 3. 너무 커지지 않게 최대치 제한 (선택 사항) */
+  gap: 2vh;
+  min-width: 300px;
 }
 
 .keyboard {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   width: 100%;
-  max-width: 450px;
-  flex-shrink: 0;
+  max-width: 500px;
+  min-width: 280px;
 }
 
 .keyboard-row {
   display: flex;
-  gap: 5px;
+  gap: 6px;
   justify-content: center;
 }
 
 .key {
-  min-width: clamp(26px, 3.8vw, 40px);
-  height: clamp(48px, 6.5vh, 54px);
+  min-width: clamp(35px, 4.5vw, 43px);
+  height: clamp(50px, 7vh, 58px);
   background-color: #d3d6da;
   border: none;
   border-radius: 4px;
   color: #000;
-  font-size: clamp(12px, 1.6vw, 14px);
+  font-size: clamp(14px, 1.8vw, 16px);
   font-weight: bold;
   cursor: pointer;
   transition: all 0.1s ease;
@@ -562,8 +510,8 @@
 }
 
 .wide-key {
-  min-width: clamp(48px, 7vw, 62px);
-  font-size: clamp(10px, 1.4vw, 12px);
+  min-width: clamp(60px, 8vw, 70px);
+  font-size: clamp(12px, 1.5vw, 14px);
 }
 
 /* 키보드 상태 색상 */
@@ -585,37 +533,36 @@
 /* 정답 표시 박스 */
 .answer-box {
   background: linear-gradient(135deg, #FFFFFF 0%, #F5EBE0 100%);
-  border-radius: 16px;
-  padding: 2vh 2.5vw;
+  border-radius: 20px;
+  padding: 2.5vh 3vw;
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   box-shadow:
     0 8px 24px rgba(93, 78, 55, 0.12),
     0 2px 8px rgba(93, 78, 55, 0.05);
   text-align: center;
   animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  flex-shrink: 0;
 }
 
 .answer-title {
-  font-size: clamp(15px, 1.8vw, 18px);
+  font-size: clamp(16px, 2vw, 20px);
   color: #8B7355;
   font-weight: 700;
-  margin-bottom: 1.2vh;
+  margin-bottom: 1.5vh;
   letter-spacing: 0.5px;
 }
 
 .answer-word {
-  font-size: clamp(28px, 3.8vw, 40px);
+  font-size: clamp(32px, 4.5vw, 48px);
   font-weight: 900;
   color: #5D4E37;
-  letter-spacing: 4px;
-  margin-bottom: 0.8vh;
+  letter-spacing: 6px;
+  margin-bottom: 1vh;
   text-transform: uppercase;
 }
 
 .answer-meaning {
-  font-size: clamp(16px, 2vw, 20px);
+  font-size: clamp(18px, 2.2vw, 24px);
   color: #8B7355;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -623,13 +570,13 @@
 
 /* 점수 등록 버튼 */
 .register-btn {
-  padding: 1.3vh 4vw;
-  font-size: clamp(15px, 1.8vw, 20px);
+  padding: 1.5vh 5vw;
+  font-size: clamp(16px, 2vw, 22px);
   font-weight: 700;
   background: linear-gradient(135deg, #C89F77 0%, #A67C52 100%);
   color: white;
   border: none;
-  border-radius: 14px;
+  border-radius: 16px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow:
@@ -637,9 +584,8 @@
     0 2px 8px rgba(166, 124, 82, 0.15);
   letter-spacing: 0.5px;
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
-  flex-shrink: 0;
 }
 
 .register-btn:hover {
@@ -665,61 +611,18 @@
 }
 
 /* 반응형 디자인 */
-@media (max-width: 1400px) {
-  .game-layout {
-    grid-template-columns: minmax(220px, 0.9fr) minmax(380px, 1.5fr) minmax(280px, 1.1fr);
-  }
-
-  .tile {
-    width: clamp(42px, 5vw, 54px);
-    height: clamp(42px, 5vw, 54px);
-    font-size: clamp(20px, 3.2vw, 26px);
-  }
-
-  .key {
-    min-width: clamp(24px, 3.5vw, 38px);
-    height: clamp(46px, 6vh, 52px);
-    font-size: clamp(11px, 1.5vw, 13px);
-  }
-
-  .wide-key {
-    min-width: clamp(44px, 6.5vw, 58px);
-  }
-}
-
 @media (max-width: 1200px) {
   .game-layout {
-    grid-template-columns: minmax(200px, 0.8fr) minmax(360px, 1.5fr) minmax(260px, 1fr);
+    grid-template-columns: 0.8fr 1.5fr 1fr;
   }
 
   .game-guide {
-    padding: 2.5vh 1.5vw;
-    gap: 1.2vh;
+    padding: 3vh 2vw;
   }
 
   .game-keyboard {
-    padding: 2vh 1.2vw;
-    gap: 1.2vh;
-  }
-
-  .tile {
-    width: clamp(40px, 4.8vw, 52px);
-    height: clamp(40px, 4.8vw, 52px);
-    font-size: clamp(18px, 3vw, 24px);
-  }
-
-  .key {
-    min-width: clamp(22px, 3.2vw, 36px);
-    height: clamp(44px, 5.5vh, 50px);
-  }
-
-  .board {
-    gap: 5px;
-    padding: 1.2vh 0.8vw;
-  }
-
-  .row {
-    gap: 5px;
+    padding: 2vh 1.5vw;
+    min-width: 280px;
   }
 }
 
@@ -737,11 +640,15 @@
 
   .game-center {
     padding: 1vh 2vw;
-    
   }
 
   .game-keyboard {
     padding: 2vh 2vw;
+    min-width: 100%;
+  }
+
+  .keyboard {
+    min-width: 320px;
   }
 
   .color-examples {
@@ -797,6 +704,8 @@
   }
 
   .key {
+    min-width: clamp(32px, 4.5vw, 40px);
     height: clamp(45px, 6vh, 52px);
+    font-size: clamp(13px, 1.6vw, 15px);
   }
 }

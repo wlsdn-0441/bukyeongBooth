@@ -154,6 +154,161 @@
   }
 }
 
+/* 편지 작성 섹션 */
+.letter-section {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 2vh;
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.18s backwards;
+}
+
+.letter-title {
+  font-size: clamp(16px, 2.2vw, 22px);
+  color: #5D4E37;
+  margin-bottom: 1.2vh;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.letter-form {
+  background: rgba(255, 255, 255, 0.6);
+  border: 2px solid #E3D5CA;
+  border-radius: 16px;
+  padding: 1.5vh 1.5vw;
+  backdrop-filter: blur(10px);
+}
+
+.letter-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 1vh 1vw;
+  font-size: clamp(13px, 1.6vw, 16px);
+  font-family: inherit;
+  border: 2px solid #E3D5CA;
+  border-radius: 12px;
+  background: white;
+  color: #5D4E37;
+  resize: vertical;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.letter-textarea:focus {
+  outline: none;
+  border-color: #C89F77;
+  box-shadow: 0 4px 16px rgba(200, 159, 119, 0.2);
+}
+
+.letter-textarea::placeholder {
+  color: #B8A89D;
+}
+
+.letter-info {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5vh;
+  margin-bottom: 1vh;
+}
+
+.char-count {
+  font-size: clamp(11px, 1.4vw, 14px);
+  color: #8B7355;
+  font-weight: 500;
+}
+
+.letter-error {
+  color: #B8734F;
+  font-size: clamp(12px, 1.5vw, 15px);
+  margin-top: 0.5vh;
+  margin-bottom: 1vh;
+  font-weight: 600;
+  background: rgba(184, 115, 79, 0.1);
+  padding: 0.8vh 1vw;
+  border-radius: 8px;
+  border-left: 3px solid #B8734F;
+}
+
+.letter-submit-btn {
+  width: 100%;
+  padding: 1.2vh 2vw;
+  font-size: clamp(14px, 1.8vw, 18px);
+  font-weight: 700;
+  background: linear-gradient(135deg, #8B7355 0%, #6B5745 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 6px 20px rgba(93, 78, 55, 0.2),
+    0 2px 8px rgba(93, 78, 55, 0.12);
+  letter-spacing: 0.3px;
+}
+
+.letter-submit-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 30px rgba(93, 78, 55, 0.3),
+    0 4px 12px rgba(93, 78, 55, 0.18);
+  background: linear-gradient(135deg, #9D8566 0%, #7D6556 100%);
+}
+
+.letter-submit-btn:active:not(:disabled) {
+  transform: translateY(0);
+  transition-duration: 0.1s;
+}
+
+.letter-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.letter-success {
+  background: linear-gradient(135deg, rgba(139, 115, 85, 0.08) 0%, rgba(107, 87, 69, 0.08) 100%);
+  border: 2px solid #C89F77;
+  border-radius: 16px;
+  padding: 2vh 2vw;
+  animation: successFadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes successFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.success-icon {
+  font-size: clamp(32px, 5vw, 48px);
+  color: #8B7355;
+  margin-bottom: 1vh;
+  animation: checkPop 0.4s cubic-bezier(0.4, 0, 0.2, 1) 0.1s backwards;
+}
+
+@keyframes checkPop {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-message {
+  font-size: clamp(14px, 1.8vw, 18px);
+  color: #5D4E37;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+
 .qr-section {
   position: relative;
   z-index: 1;
@@ -259,6 +414,38 @@
 
   .score {
     font-size: clamp(32px, 7vw, 48px);
+  }
+
+  .letter-section {
+    margin-bottom: 1.5vh;
+  }
+
+  .letter-title {
+    font-size: clamp(14px, 3vw, 18px);
+    margin-bottom: 1vh;
+  }
+
+  .letter-form {
+    padding: 1.2vh 3vw;
+  }
+
+  .letter-textarea {
+    min-height: 80px;
+    padding: 1vh 2vw;
+    font-size: clamp(12px, 2vw, 15px);
+  }
+
+  .letter-submit-btn {
+    padding: 1vh 3vw;
+    font-size: clamp(13px, 2.2vw, 16px);
+  }
+
+  .success-icon {
+    font-size: clamp(28px, 6vw, 40px);
+  }
+
+  .success-message {
+    font-size: clamp(13px, 2.2vw, 16px);
   }
 
   .qr-section h2 {

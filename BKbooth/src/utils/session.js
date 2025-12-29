@@ -1,5 +1,5 @@
 import { db } from './firebase';
-import { doc, setDoc, Timestamp } from 'firebase/firestore';
+import { doc, setDoc, updateDoc, Timestamp } from 'firebase/firestore';
 
 // 6자리 랜덤 영숫자 생성
 export function generateSessionId() {
@@ -26,12 +26,27 @@ export async function createGameSession(gameType, score) {
       expiresAt,
       claimed: false,
       claimedBy: null,
-      claimedAt: null
+      claimedAt: null,
+      letter: null
     });
 
     return sessionId;
   } catch (error) {
     console.error('세션 생성 실패:', error);
+    throw error;
+  }
+}
+
+// 편지 추가
+export async function addLetterToSession(sessionId, letterContent) {
+  try {
+    await updateDoc(doc(db, 'gameSessions', sessionId), {
+      letter: letterContent,
+      letterCreatedAt: Timestamp.now()
+    });
+    return true;
+  } catch (error) {
+    console.error('편지 저장 실패:', error);
     throw error;
   }
 }

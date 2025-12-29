@@ -279,7 +279,8 @@ function ColorFindGame() {
       setIsCorrect(true);
       const timeBonus = timeLeft / LEVEL_CONFIG[level].time;
       const newScore = Math.floor(100 * level * (1 + combo * 0.1) * timeBonus);
-      setScore(prev => prev + newScore);
+      const updatedScore = score + newScore; // 새로운 점수 계산
+      setScore(updatedScore);
       setCombo(prev => prev + 1);
 
       // 3문제 완료 시 레벨업
@@ -294,8 +295,8 @@ function ColorFindGame() {
             setQuestionsInLevel(0);
             generateNewQuestion(nextLevel);
           } else {
-            // 게임 완료
-            completeGame();
+            // 게임 완료 - 최종 점수 전달
+            completeGame(updatedScore);
           }
         } else {
           generateNewQuestion();
@@ -307,20 +308,21 @@ function ColorFindGame() {
       setCombo(0);
 
       setTimeout(() => {
-        // 게임 오버
-        completeGame();
+        // 게임 오버 - 현재 점수 전달
+        completeGame(score);
       }, 1000);
     }
   };
 
   // 게임 완료
-  const completeGame = async () => {
+  const completeGame = async (finalScore) => {
     try {
-      const finalScore = score;
-      if (finalScore > highScore) {
-        setHighScore(finalScore);
+      // finalScore가 전달되지 않으면 현재 score 사용
+      const scoreToSave = finalScore !== undefined ? finalScore : score;
+      if (scoreToSave > highScore) {
+        setHighScore(scoreToSave);
       }
-      const newSessionId = await createGameSession('colorfind', finalScore);
+      const newSessionId = await createGameSession('colorfind', scoreToSave);
       setSessionId(newSessionId);
       setGameState('complete');
     } catch (error) {
@@ -338,7 +340,13 @@ function ColorFindGame() {
           clearInterval(timer);
           // 시간 초과 - 게임 오버
           setCombo(0);
-          setTimeout(() => completeGame(), 500);
+          // 현재 점수를 클로저로 캡처하여 전달
+          setTimeout(() => {
+            setScore(currentScore => {
+              completeGame(currentScore);
+              return currentScore;
+            });
+          }, 500);
           return 0;
         }
         return prev - 1;
